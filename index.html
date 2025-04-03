@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PawFuel</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="aset/paw.ico">
+
+    <!-- Tailwind Setting -->
+    <style type="text/tailwindcss">
+      @theme {
+        --font-lexend: "Lexend";
+        --font-gab: "Gabarito";
+      }
+
+      /* Scroll snapping container */
+      .scroll-container {
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+      }
+
+      /* Scroll snap sections */
+      .scroll-section {
+          scroll-snap-align: start;
+          height: 100vh;
+      }
+
+      /* Disable default scrollbar */
+      .scroll-container {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+      }
+      .scroll-container::-webkit-scrollbar {
+          display: none;  /* Chrome, Safari, and Opera */
+      }
+
+      /* Scroll snap sections (except the last) */
+      .scroll-section:not(:last-child) {
+        scroll-snap-align: start;
+        height: 100vh;
+      }
+
+      /* Last section scrolls normally */
+      .scroll-section:last-child {
+          min-height: 100vh;
+      }
+
+      /* Animation classes */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .fade-in.active {
+          opacity: 1;
+          transform: translateY(0);
+      }
+    </style>
+
+  </head>
+  <body class="leading-normal tracking-normal z-30 top-0 w-screen h-screen text-white"></body>
+
+    <!-- Nav Bar -->
+    <nav id="header" class="w-full fixed flex-wrap align-items-center mx-auto justify-between p-2 fixed top-0 left-0 right-0 z-30">
+      <div class="flex justify-between items-center w-[98%] mx-auto text-black">
+
+        <!-- Logo -->
+         <div class=" text-5xl font-extrabold">
+          <span class="font-lexend text-white drop-shadow-lg">
+            <a href="#">PAWFUEL</a>
+          </span>
+         </div>
+
+        <!-- Mid Section -->
+        <div class="-ml-13 text-white" >
+          <ul class="flex gap-[4vw]">
+            <li>
+              <a class="rounded-full duration-200 hover:bg-gray-200 hover:text-black px-4 py-2" href="#">About</a>
+            </li>
+            <li>
+              <a class="rounded-full duration-200 hover:bg-gray-200 hover:text-black px-4 py-2" href="#">Shop</a>
+            </li>
+            <li>
+              <a class="rounded-full duration-200 hover:bg-gray-200 hover:text-black px-4 py-2" href="#">Location</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Us Button -->
+        <div>
+          <button class="transition duration-250 ease-out cursor-pointer bg-lime-200 text-lime-600 hover:bg-lime-500 hover:text-lime-100 font-bold rounded-full py-2 px-4 "><a href="#"></a>Contact Us</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="">
+      <!-- Abous Us Section -->
+      <section class="w-screen h-screen p-15 w-full h-full bg-no-repeat bg-cover each-section"  style="background-image: url('./aset/first-bg.jpg');">
+        <div class="py-15 w-sm h-full">
+          <span class="font-gab font-bold text-8xl drop-shadow-lg fade-in delay-4000">
+            Made with love and care for your love one
+          </span>
+          
+        </div>
+      </section>
+      <!-- About Us Close -->
+
+      <!-- Ingredient Section -->
+      <section class="w-screen h-screen p-15 w-full h-full bg-no-repeat bg-cover each-section"  style="background-image: url('./aset/snack-bg.jpg');">
+        <div class="py-15 w-md h-full float-right text-right">
+          <span class="font-gab font-bold text-8xl drop-shadow-lg fade-in delay-4000">
+            100% Organic ingredients to fulfill your dogs nutrition 
+          </span>
+        </div>
+      </section>
+      <!-- Ingredient Close -->
+
+      <!-- Testimonial Section -->
+      <section class="w-screen h-screen p-15 w-full h-full bg-no-repeat bg-cover each-section"  style="background-image: url('./aset/sec-bg.jpg');">
+        <div class="container mx-auto py-15">
+          <div class="flex flex-col gap-10 max-w-6xl">
+            <h1 class="text-6xl font-bold text-whitedrop-shadow-lg fade-in delay-4000">"What our customers said about us?"</h1>
+          </div>
+          <!-- Testimonial Card -->
+          <div class="grid grid-cols-1 gap-10 p-3 mt-10 w-lg">
+            <div class="flex gap-10 bg-white drop-shadow-lg rounded items-center fade-in delay-4000">
+              <img class="h-64 p-2" src="./aset/cust-1.jpg" alt="customer 1">
+              <span class="p-2">
+                <p class="text-gray-700 text-lg font-gab -ml-7">"I’ve tried so many brands, but PawFuel is the only one my dog truly loves. It’s packed with wholesome ingredients that keep him active, healthy, and excited for mealtime!"<br> <small>- Lea</small></p>
+              </span>
+            </div>
+    
+            <div class="flex gap-10 bg-white drop-shadow-lg rounded items-center fade-in delay-4000">
+              <img class="h-64 p-2" src="./aset/cust-6.jpg" alt="customer 2">
+              <span class="p-2">
+                <p class="text-gray-700 text-lg font-gab -ml-7">"Not only does PawFuel taste amazing (according to my dog!), but it’s also helped with his digestion and energy levels. It’s a win-win for both of us!" <br><small>- Sarah</small></p>
+              </span>
+            </div>
+          </div>
+        <div>
+      </section>
+      <!-- Testimonial Close -->
+
+      <!-- Products Section -->
+      <section class="px-10 each-section">
+        <div class="mx-auto py-25 transition-scroll fade-in delay-4000">
+          <div class="gap-10 max-w-6xl mx-auto">
+            <h1 class="text-5xl font-bold bg-gradient-to-br from-yellow-400 to-amber-500 bg-clip-text text-transparent text-center">Our Products</h1>
+          </div>
+    
+          <!-- Products Card -->
+            <div class="overflow-x-auto py-5 ">
+            <div class="grid grid-flow-col auto-cols-max gap-10 py-2">
+              <div class="bg-white drop-shadow-lg rounded items-center h-full w-3xs">
+                <a href="#">
+                  <img src="aset/product-1.jpg" alt="food">
+                  <p class="text-gray-700 text-lg font-gab text-[14px] ml-2"><b>$5</b> per ounces</p>
+                  <p class="text-gray-700 text-lg font-gab text-[18px] ml-2">Dry Puppy Food with Salmon</p>
+                  <p class="text-gray-700 text-lg font-gab text-[13px] ml-2">For puppy up to 15 Months</p>
+                </a>
+              </div>
+    
+              <div class="bg-white drop-shadow-lg rounded h-full w-3xs">
+                <a href="#">
+                  <img src="aset/product-2.jpg" alt="food">
+                  <p class="text-gray-700 text-lg font-gab text-[14px] ml-2"><b>$9</b> per ounces</p>
+                  <p class="text-gray-700 text-lg font-gab text-[18px] ml-1">Double Protein Dry Puppy Food</p>
+                  <p class="text-gray-700 text-lg font-gab text-[13px] ml-2">For puppy up to 15 Months</p>
+                </a>
+              </div>
+    
+              <div class="bg-white drop-shadow-lg rounded h-full w-3xs">
+                <a href="#">
+                  <img src="aset/product-3.jpg" alt="food">
+                  <p class="text-gray-700 text-lg font-gab text-[14px] ml-2"><b>$8</b> per ounces</p>
+                  <p class="text-gray-700 text-lg font-gab text-[18px] ml-2">Dog Snack with Chicken</p>
+                  <p class="text-gray-700 text-lg font-gab text-[13px] ml-2">For puppy and adult dogs</p>
+                </a>
+              </div>
+    
+              <div class="bg-white drop-shadow-lg rounded h-full w-3xs">
+                <a href="#">
+                  <img src="aset/product-4.jpg" alt="food">
+                  <p class="text-gray-700 text-lg font-gab text-[14px] ml-2"><b>$9</b> per ounces</p>
+                  <p class="text-gray-700 text-lg font-gab text-[18px] ml-2">Adult Dog Food with Lamb</p>
+                  <p class="text-gray-700 text-lg font-gab text-[13px] ml-2">For adult dogs</p> 
+                </a>
+              </div>
+    
+              <div class="bg-white drop-shadow-lg rounded h-full w-3xs">
+                <a href="#">
+                  <img src="aset/product-5.jpg" alt="food">
+                  <p class="text-gray-700 text-lg font-gab text-[14px] ml-2"><b>$11</b> per ounces</p>
+                  <p class="text-gray-700 text-lg font-gab text-[18px] ml-2">Mix Dog Food with Chicken and Salmon</p>
+                  <p class="text-gray-700 text-lg font-gab text-[13px] ml-2">For adult dogs</p>
+                </a>
+              </div>
+    
+              <div class="bg-white drop-shadow-lg rounded h-full w-3xs">
+                <a href="#" class="">
+                  <img class="aspect-square rounded" src="aset/product-8.jpg" alt="food">
+                  <p class="text-gray-700 text-lg font-gab text-[14px] ml-2"><b>$7</b></p>
+                  <p class="text-gray-700 text-lg font-gab text-[18px] ml-2">Slow Pet Bowl</p>
+                  <p class="text-gray-700 text-lg font-gab text-[13px] ml-2">To slow down pet eating</p>
+                </a>
+              </div>
+            </div>
+            </div>
+        </div>
+      </section>
+      <!-- Products Close -->
+
+    
+      <hr class="text-zinc-300">
+
+      <!-- Footer Section -->
+      <section class="">
+        <div class="bg-white grid grid-cols-3 w-full mx-auto text-gray-600 font-lexend px-10 py-5 text-[14px]">
+          <div class="grid-rows-5 gap-x-2 gap-y-10">
+            <p class="font-bold"><big>Resources</big></p>
+            <p><a class="hover:text-black" href="#">Find A Store</a></p>
+            <p><a class="hover:text-black" href="#">Become A Member</a></p>
+            <p><a class="hover:text-black" href="#">Our Blog</a></p>
+            <p><a class="hover:text-black" href="#">Become a Reseller</a></p>
+          </div>
+  
+          <div>
+            <p class="font-bold"><big>Company</big></p>
+            <p><a class="hover:text-black" href="#">About Us</a></p>
+            <p><a class="hover:text-black"href="#">Our Story</a></p>
+            <p><a class="hover:text-black" href="#">Careers</a></p>
+          </div>
+  
+          <div>
+            <p class="font-bold"><big>Help</big></p>
+            <p><a class="hover:text-black" href="#">Contact Us</a></p>
+            <p><a class="hover:text-black" href="#">FAQ</a></p>
+            <p><a class="hover:text-black" href="#">Terms of Service</a></p>
+            <p><a class="hover:text-black" href="#">Privacy policy</a></p>
+          </div>
+  
+        </div>
+      </section>
+      <!-- Footer Section Close -->
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="px-10 py-5">
+      <span class="text-gray-600">
+        @2025 Copyright Stylish. All rights reserved.
+      </span>
+    </div>
+
+    <script>
+      // Intersection Observer for animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Find all animatable elements in the current section
+                const animatableElements = entry.target.querySelectorAll(
+                    '.fade-in'
+                );
+                
+                // Add active class to trigger animation
+                animatableElements.forEach((el, index) => {
+                    // Add staggered delay for multiple elements
+                    setTimeout(() => {
+                        el.classList.add('active');
+                    }, index * 200);
+                });
+            } else {
+                // Remove active class when section is not in view
+                const animatableElements = entry.target.querySelectorAll(
+                    '.fade-in'
+                );
+                animatableElements.forEach(el => {
+                    el.classList.remove('active');
+                });
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when at least 10% of section is visible
+    });
+
+    // Observe all sections
+    document.querySelectorAll('.each-section').forEach(section => {
+        observer.observe(section);
+    });
+    </script>
+  </body>
+</html>
